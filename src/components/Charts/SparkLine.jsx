@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const SparkLine = () => {
+const SparkLine = ({id, height, width, color, data, type, currentColor}) => {
   return (
-    <div>SparkLine</div>
+    <></>
   )
 }
 
