@@ -9,15 +9,12 @@ import { Cart, Chat, Notification, UserProfile } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 import ReactTooltip from 'react-tooltip';
 
-const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
+const NavButton = ({ place, title, customFunc, icon, color, dotColor }) => {
   return (
-    <>
-      <button data-tip={title} type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
+      <button data-tip={title} place={place} type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
           <span style={{ background: dotColor }} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2" />
           {icon}
       </button>
-    </>
-      
   )
 }
 
@@ -46,7 +43,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-      <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />} />
+      <NavButton title="Menu" place="bottom" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />} />
       <div className="flex">
         <NavButton title="Cart" dotColor="#03C9D7" customFunc={() => handleClick('cart')} color="blue" icon={<FiShoppingCart />} />
         <NavButton title="Chat" dotColor="#03C9D7" customFunc={() => handleClick('chat')} color="blue" icon={<BsChatLeft />} />

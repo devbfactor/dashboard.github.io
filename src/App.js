@@ -14,12 +14,12 @@ const App = () => {
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4 " style={{ zIndex: '1000' }}>
-            <div data-tip="Settings">
+            <div data-tip="Settings" place="bottom">
               <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white" style={{background: 'blue', borderRadius: '50%'}}>
                 <FiSettings />
               </button>
             </div>
-            <ReactTooltip place="bottom" effect="solid" padding="4px 20px" backgroundColor="#7f7f7f"/>
+            <ReactTooltip effect="solid" padding="4px 20px" backgroundColor="#7f7f7f"/>
           </div>
           {activeMenu ? (
             //if the sidebar is open
