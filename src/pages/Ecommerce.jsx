@@ -53,7 +53,7 @@ const Ecommerce = () => {
             </div>
           </div>
           <div>
-            <div className="mt-10 flex gap-10 flex-wrap justify-center">
+            <div className="mt-10 flex gap-5 flex-wrap justify-center">
               <div className="border-r-1 border-color m-4 pr-10">
                 <div>
                   <p>

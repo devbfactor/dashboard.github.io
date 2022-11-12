@@ -3158,6 +3158,8 @@ export const stackedChartData = [
     { name: 'Feb', uv: 3000, pv: 1398, amt: 2210 },
     { name: 'Mar', uv: 2000, pv: 9800, amt: 2290 },
     { name: 'Apr', uv: 2780, pv: 3908, amt: 2000 },
+    { name: 'May', uv: 1890, pv: 4800, amt: 2181 },
+    { name: 'June', uv: 2390, pv: 3800, amt: 2500 },
 
 ];
 
