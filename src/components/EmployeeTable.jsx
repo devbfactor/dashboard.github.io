@@ -111,8 +111,8 @@ const EmployeeTable = () => {
     return (
         <div>
             <div className="search-container bg-gray-200 flex justify-end w-full border-gray-200 border-1 py-3">
-                <input type="text" className="w-1/4 outline-none bg-transparent border-gray-300 border-b-1 hover:border-b-1 hover:border-blue-700 py-1" placeholder="Search employee" value={searchPhrase} onChange={search} />
-                <FiSearch className="mt-2 mr-5 text-gray-500"/>
+                <input type="text" className="w-1/4 outline-none bg-transparent border-gray-300 border-b-1 hover:border-b-1 hover:border-blue-700" placeholder="Search employee" value={searchPhrase} onChange={search} />
+                <FiSearch className="mt-1 mx-5 text-gray-500"/>
             </div>
             <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 border-1 py-3">
                 <div className="flex flex-nowrap">
