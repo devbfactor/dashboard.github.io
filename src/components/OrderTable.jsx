@@ -109,31 +109,31 @@ const OrderTable = () => {
     <div >
         <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 border-1 py-3">
           <div className="flex flex-nowrap">
-              <span className="text-gray-500 text-base text-center w-44">Image</span>
-              <span onClick={sortByWord} className={spanStyle}>
+              <div className="text-gray-500 text-base text-center w-44">Image</div>
+              <div onClick={sortByWord} className={spanStyle}>
                 Item 
                 <span className={arrowStyle}>{sorted.sorted === "OrderItems" ? renderArrow() : null}</span>
-              </span>
-              <span onClick={sortByCustomer} className={spanStyle}>
+              </div>
+              <div onClick={sortByCustomer} className={spanStyle}>
                 Customer Name
                 <span className={arrowStyle}>{sorted.sorted === "CustomerName" ? renderArrow() : null}</span>
-              </span>
-              <span onClick={sortByAmount} className={spanStyle}>
+              </div>
+              <div onClick={sortByAmount} className={spanStyle}>
                 Total Amount
                 <span className={arrowStyle}>{sorted.sorted === "TotalAmount" ? renderArrow() : null}</span>
-              </span>
-              <span onClick={sortByStatus} className={spanStyle}>
+              </div>
+              <div onClick={sortByStatus} className={spanStyle}>
                 Status
                 <span className={arrowStyle}>{sorted.sorted === "Status" ? renderArrow() : null}</span>
-              </span>
-              <span onClick={sortById} className={spanStyle}>
+              </div>
+              <div onClick={sortById} className={spanStyle}>
                 Order ID
                 <span className={arrowStyle}>{sorted.sorted === "OrderID" ? renderArrow() : null}</span>
-              </span>
-              <span onClick={sortByLocation} className={spanStyle}>
+              </div>
+              <div onClick={sortByLocation} className={spanStyle}>
                 Location
                 <span className={arrowStyle}>{sorted.sorted === "Location" ? renderArrow() : null}</span>
-              </span>
+              </div>
             </div> 
         </div>
           <RenderUsers order={currentPosts} /> 
