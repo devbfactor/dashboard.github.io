@@ -7,7 +7,8 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
-import ReactTooltip from 'react-tooltip';
+// import { MdOutlineArrowDownward, MdOutlineArrowUpward } from '../react-icons/md';
+
 
 const NavButton = ({ place, title, customFunc, icon, color, dotColor }) => {
   return (
