@@ -107,9 +107,9 @@ const OrderTable = () => {
 
   return (
     <div >
-        <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2">
+        <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 dark:border-gray-600 bg-gray-100 border-1 py-2 dark:bg-gray-700">
           <div className="flex flex-nowrap">
-              <div className="text-gray-500 text-base text-center w-44">Image</div>
+              <div className="text-gray-500 text-base text-center w-44 dark:text-white">Image</div>
               <div onClick={sortByWord} className={spanStyle}>
                 Item 
                 <span className={arrowStyle}>{sorted.sorted === "OrderItems" ? renderArrow() : null}</span>

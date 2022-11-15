@@ -84,13 +84,13 @@ const CustomersTable = () => {
     
     return (
         <div>
-            <div className="border-1 mb-3 flex justify-start w-full py-2">
-                <button type="button" className="flex px-3 py-2 ml-2 text-gray-600 font-medium text-sm leading-normal capitalize rounded hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-out align-middle">
-                    <MdDeleteForever className="text-xl"/>
+            <div className="border-1 mb-3 flex justify-start w-full py-2 dark:bg-main-dark-bg dark:border-gray-600">
+                <button type="button" className="flex px-3 py-2 ml-2 dark:text-gray-400 dark:hover:bg-slate-600 text-gray-600 font-medium text-sm leading-normal capitalize rounded hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-out align-middle">
+                    <MdDeleteForever className="text-xl dark:text-gray-400 mr-2"/>
                     Delete
                 </button>
             </div>
-            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2">
+            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2 dark:bg-gray-700 dark:border-gray-600">
                 <div className="flex flex-nowrap">
                     <div className="flex justify-center text-gray-500 text-lg mt-1 text-center w-20">
                         <AiOutlineMinusSquare />
@@ -99,7 +99,7 @@ const CustomersTable = () => {
                         Name
                         <span className={arrowStyle}>{sorted.sorted === "CustomerName" ? renderArrow() : null}</span>
                     </div>
-                    <div className="flex justify-center text-gray-500 text-base text-center w-60">
+                    <div className="flex justify-center text-gray-500 text-base text-center w-60 dark:text-white">
                         Project Name
                     </div>
                     <div onClick={sortByStatus} className={employeeRowStyle}>

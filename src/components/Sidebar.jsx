@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { SiShopware } from 'react-icons/si';
-import { MdOutlineCancel } from 'react-icons/md';
+import { MdDashboard, MdOutlineCancel } from 'react-icons/md';
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -22,7 +21,7 @@ const Sidebar = () => {
       {activeMenu && (<>
         <div className="flex justify-between items-center">
           <Link to="/" onClick={handleCloseSidebar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-            <SiShopware /> <span>SukiMart</span>
+            <MdDashboard /> <span>Dashboard</span>
           </Link>
           <button type="button" onClick={() => setActiveMenu((prevActiveMenu)=> !prevActiveMenu)} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
             <MdOutlineCancel />
