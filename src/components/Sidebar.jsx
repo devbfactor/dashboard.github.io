@@ -2,12 +2,11 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
-import ReactTooltip from 'react-tooltip';
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize} =  useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor} =  useStateContext();
 
   const handleCloseSidebar = () => {
     if (activeMenu && screenSize <= 900) {
@@ -39,7 +38,7 @@ const Sidebar = () => {
               {item.links.map((link) => (
                 <NavLink
                   to={`/${link.name}`}
-                  key={link.name} onClick={handleCloseSidebar} className={({ isActive }) => isActive ? activeLink : normalLink}>
+                  key={link.name} onClick={handleCloseSidebar} style={({isActive}) => ({backgroundColor: isActive ? currentColor: ''})} className={({ isActive }) => isActive ? activeLink : normalLink}>
                   {link.icon}
                   <span className="capitalize">
                     {link.name}

@@ -6,6 +6,8 @@ import { earningData, ecomPieChartDat } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
+
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -17,7 +19,7 @@ const Ecommerce = () => {
             </div>
           </div>
           <div className="mt-6">
-            <Button color="white" bgColor="blue" text="Download" borderRadius="10px" size="md"/>
+            <Button color="white" bgColor={currentColor} text="Download" borderRadius="10px" size="md"/>
           </div>
         </div>
 
@@ -74,7 +76,7 @@ const Ecommerce = () => {
                 </div>
 
                 <div className="mt-10">
-                  <Button color="white" bgColor="blue" borderRadius="10px" text="Download Report" />
+                  <Button color="white" bgColor={currentColor} borderRadius="10px" text="Download Report" />
                 </div>
               </div>
 

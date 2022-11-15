@@ -17,13 +17,31 @@ export const ContextProvider = ({ children }) => {
     const [posts, setPosts] = useState(ordersData);
     const [employee, setEmployee] = useState(employeesData);
     const [customer, setCustomer] = useState(customersData);
+    const [currentColor, setCurrentColor] = useState('#03C9D7');
+    const [currentMode, setCurrentMode] = useState('Light');
+    const [themeSettings, setThemeSettings] = useState(false);
+
+    const setMode = (e) => {
+        setCurrentMode(e.target.value);
+        localStorage.setItem('themeMode', e.target.value);
+
+        setThemeSettings(false)
+    }
+
+    const setColor = (color) => {
+        setCurrentColor(color);
+        localStorage.setItem('colorMode', color);
+
+        setThemeSettings(false)
+    }
+
     const handleClick = (clicked) => {
         setIsClicked({...initialState, [clicked]: true});
     }
 
     return (
         <StateContext.Provider
-            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer}}>
+            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer, currentColor, setCurrentColor, currentMode, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor}}>
             {children}
         </StateContext.Provider>
     )
