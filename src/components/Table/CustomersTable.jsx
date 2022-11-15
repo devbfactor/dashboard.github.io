@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { arrowStyle, spanStyle } from '../components/componentLogic';
-import { useStateContext } from '../contexts/ContextProvider';
-import Pagination from '../components/Pagination';
-import { MdArrowDownward, MdArrowUpward } from 'react-icons/md';
+import { arrowStyle, employeeRowStyle } from '../componentLogic';
+import { useStateContext } from '../../contexts/ContextProvider';
+import Pagination from '../Pagination';
+import { MdArrowDownward, MdArrowUpward, MdDeleteForever } from 'react-icons/md';
+import { AiOutlineMinusSquare } from 'react-icons/ai';
 import RenderCustomer from './RenderCustomer';
 
 const CustomersTable = () => {
@@ -24,20 +25,6 @@ const CustomersTable = () => {
         usersCopy.sort((userA, userB) => {
         const wordA = `${userA.CustomerName}`;
         const wordB = `${userB.CustomerName}`;
-        if (sorted.reversed) {
-            return wordB.localeCompare(wordA);
-        }
-        return wordA.localeCompare(wordB);
-        })
-        setOrder(usersCopy);
-    }
-
-    const sortByProject = () => {
-        setSorted({sorted: "ProjectName", reversed: !sorted.reversed})
-        const usersCopy = [...order];
-        usersCopy.sort((userA, userB) => {
-        const wordA = `${userA.ProjectName}`;
-        const wordB = `${userB.ProjectName}`;
         if (sorted.reversed) {
             return wordB.localeCompare(wordA);
         }
@@ -97,28 +84,33 @@ const CustomersTable = () => {
     
     return (
         <div>
-            <div>
-                {/* Delete container here */}
+            <div className="border-1 mb-3 flex justify-start w-full py-2">
+                <button type="button" className="flex px-3 py-2 ml-2 text-gray-600 font-medium text-sm leading-normal capitalize rounded hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-out align-middle">
+                    <MdDeleteForever className="text-xl"/>
+                    Delete
+                </button>
             </div>
-            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 border-1 py-3">
+            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2">
                 <div className="flex flex-nowrap">
-                    <div onClick={sortByName} className={spanStyle}>
-                        Customer Name
+                    <div className="flex justify-center text-gray-500 text-lg mt-1 text-center w-20">
+                        <AiOutlineMinusSquare />
+                    </div>
+                    <div onClick={sortByName} className={employeeRowStyle}>
+                        Name
                         <span className={arrowStyle}>{sorted.sorted === "CustomerName" ? renderArrow() : null}</span>
                     </div>
-                    <div onCLick={sortByProject} className={spanStyle}>
+                    <div className="flex justify-center text-gray-500 text-base text-center w-60">
                         Project Name
-                        <span className={arrowStyle}>{sorted.sorted === "ProjectName" ? renderArrow() : null}</span>
                     </div>
-                    <div onClick={sortByStatus} className={spanStyle}>
+                    <div onClick={sortByStatus} className={employeeRowStyle}>
                         Status
                         <span className={arrowStyle}>{sorted.sorted === "Status" ? renderArrow() : null}</span>
                     </div>
-                    <div onClick={sortByWeeks} className={spanStyle}>
+                    <div onClick={sortByWeeks} className={employeeRowStyle}>
                         Weeks
                         <span className={arrowStyle}>{sorted.sorted === "Weeks" ? renderArrow() : null}</span>
                     </div>
-                    <div onClick={sortByBudget} className={spanStyle}>
+                    <div onClick={sortByBudget} className={employeeRowStyle}>
                         Budget
                         <span className={arrowStyle}>{sorted.sorted === "Budget" ? renderArrow() : null}</span>
                     </div>

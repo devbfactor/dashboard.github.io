@@ -1,5 +1,5 @@
 import React from 'react'
-import { employeeTableRow, paragStyle } from './componentLogic'
+import { employeeTableRow, paragStyle } from '../componentLogic'
 
 const RenderEmployees = ({order}) => {
     return order.map((user, index) => {

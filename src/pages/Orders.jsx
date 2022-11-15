@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../components';
-import OrderTable from '../components/OrderTable';
+import OrderTable from '../components/Table/OrderTable';
 
 const Orders = () => {
 

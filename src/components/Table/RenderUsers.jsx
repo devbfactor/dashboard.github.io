@@ -1,5 +1,5 @@
 import React from 'react'
-import { tableRowStyle, paragStyle } from '../components/componentLogic';
+import { tableRowStyle, paragStyle } from '../componentLogic';
 
 const RenderUsers = ({order}) => {
     return order.map((user, index) => {

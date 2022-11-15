@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -7,7 +7,6 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
-// import { MdOutlineArrowDownward, MdOutlineArrowUpward } from '../react-icons/md';
 
 
 const NavButton = ({ place, title, customFunc, icon, color, dotColor }) => {

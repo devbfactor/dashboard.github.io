@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { arrowStyle, spanStyle } from '../components/componentLogic';
-import { useStateContext } from '../contexts/ContextProvider';
-import Pagination from '../components/Pagination';
+import { arrowStyle, spanStyle } from '../componentLogic';
+import { useStateContext } from '../../contexts/ContextProvider';
+import Pagination from '../Pagination';
 import RenderUsers from './RenderUsers';
 import { MdArrowDownward, MdArrowUpward } from 'react-icons/md';
 
@@ -107,7 +107,7 @@ const OrderTable = () => {
 
   return (
     <div >
-        <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 border-1 py-3">
+        <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2">
           <div className="flex flex-nowrap">
               <div className="text-gray-500 text-base text-center w-44">Image</div>
               <div onClick={sortByWord} className={spanStyle}>

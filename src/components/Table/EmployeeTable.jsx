@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { spanStyle, arrowStyle, employeeRowStyle } from './componentLogic';
+import { arrowStyle, employeeRowStyle } from '../componentLogic';
 import RenderEmployees from './RenderEmployees';
-import { useStateContext } from '../contexts/ContextProvider';
-import Pagination from '../components/Pagination';
+import { useStateContext } from '../../contexts/ContextProvider';
+import Pagination from '../Pagination';
 import { MdArrowDownward, MdArrowUpward } from 'react-icons/md';
 import { FiSearch } from 'react-icons/fi';
 
@@ -110,11 +110,11 @@ const EmployeeTable = () => {
 
     return (
         <div>
-            <div className="search-container bg-gray-200 flex justify-end w-full border-gray-200 border-1 py-3">
-                <input type="text" className="w-1/4 outline-none bg-transparent border-gray-300 border-b-1 hover:border-b-1 hover:border-blue-700" placeholder="Search employee" value={searchPhrase} onChange={search} />
-                <FiSearch className="mt-1 mx-5 text-gray-500"/>
+            <div className="search-container border-1 mb-3 flex justify-start w-full py-2">
+                <FiSearch className="mt-1 ml-3 text-gray-400"/>
+                <input type="text" className="w-1/4 outline-none bg-transparent ml-3" placeholder="Search employee here" value={searchPhrase} onChange={search} />
             </div>
-            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 border-1 py-3">
+            <div className="flex flex-nowrap lg:justify-center justify-start border-gray-200 bg-gray-100 border-1 py-2">
                 <div className="flex flex-nowrap">
                     <div onClick={sortByName} className={employeeRowStyle}>
                         Employee
