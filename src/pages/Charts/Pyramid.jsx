@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pyramid = () => {
   return (
-    <div>Pyramid</div>
+    <div></div>
   )
 }
 

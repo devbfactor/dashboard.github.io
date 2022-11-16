@@ -35,14 +35,22 @@
 
 /* color-picker style  */
 
-#preview {
-    background: transparent url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png') no-repeat;
+.lightPreview {
+    background: transparent url('https://res.cloudinary.com/hellobryan/image/upload/v1668570502/dashboard/PreviewLight_rugzuq.png') no-repeat;
     display: inline-block;
     height: 80px;
     margin: 10px 0;
-    min-width: 300px;
+    min-width: 600px;
     max-width: 600px;
-    background-color: #008000;
+}
+
+.darkPreview {
+    background: transparent url('https://res.cloudinary.com/hellobryan/image/upload/v1668570832/dashboard/PenDark.png_uy4xik.png') no-repeat;
+    display: inline-block;
+    height: 80px;
+    margin: 10px 0;
+    min-width: 600px;
+    max-width: 600px;
 }
 
 .e-input-group:not(.e-float-icon-left),
