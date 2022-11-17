@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { ordersData, employeesData, customersData } from '../data/dummy';
+import dayjs from 'dayjs';
+import SmallCalendar from '../components/Calendar/SmallCalendar';
 
 const StateContext = createContext();
 
@@ -7,7 +9,10 @@ const initialState = {
     chat: false,
     cart: false,
     userProfile: false,
-    notification: false
+    notification: false,
+    monthIndex: 0,
+    smallCalendarMonth: 0,
+    daySelected: null
 }
 
 export const ContextProvider = ({ children }) => {
@@ -20,6 +25,9 @@ export const ContextProvider = ({ children }) => {
     const [currentColor, setCurrentColor] = useState('#03C9D7');
     const [currentMode, setCurrentMode] = useState('Light');
     const [themeSettings, setThemeSettings] = useState(false);
+    const [monthIndex, setMonthIndex] = useState(dayjs().month());
+    const [smallCalendarMonth, setSmallCalendarMonth] = useState(null);
+    const [daySelected, setDaySelected] = useState(null);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -39,9 +47,15 @@ export const ContextProvider = ({ children }) => {
         setIsClicked({...initialState, [clicked]: true});
     }
 
+    useEffect(() => {
+        if (smallCalendarMonth !== null) {
+            setMonthIndex(smallCalendarMonth)
+        }
+    }, [smallCalendarMonth])
+
     return (
         <StateContext.Provider
-            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer, currentColor, setCurrentColor, currentMode, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor}}>
+            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer, currentColor, setCurrentColor, currentMode, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor, monthIndex, setMonthIndex, smallCalendarMonth, setSmallCalendarMonth, daySelected, setDaySelected}}>
             {children}
         </StateContext.Provider>
     )
