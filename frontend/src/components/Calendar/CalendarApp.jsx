@@ -4,9 +4,9 @@ import CalendarHeader from '../Calendar/CalendarHeader';
 import Month from '../Calendar/Month';
 import Sidebar from '../Calendar/Sidebar';
 import { getMonth } from '../Calendar/util';
-
+import EventModal from './EventModal';
 const CalendarApp = () => {
-    const { monthIndex } = useStateContext();
+    const { monthIndex, showEventModal } = useStateContext();
     const [currentMonth, setCurrentMonth] = useState(getMonth());
 
     useEffect(() => {
@@ -15,6 +15,7 @@ const CalendarApp = () => {
 
     return (
         <React.Fragment>
+            {showEventModal && <EventModal />}
             <div className="h-screen flex flex-col">
                 <CalendarHeader />
                 <div className="flex flex-1">

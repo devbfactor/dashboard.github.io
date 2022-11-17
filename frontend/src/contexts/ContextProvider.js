@@ -27,7 +27,8 @@ export const ContextProvider = ({ children }) => {
     const [themeSettings, setThemeSettings] = useState(false);
     const [monthIndex, setMonthIndex] = useState(dayjs().month());
     const [smallCalendarMonth, setSmallCalendarMonth] = useState(null);
-    const [daySelected, setDaySelected] = useState(null);
+    const [daySelected, setDaySelected] = useState(dayjs());
+    const [showEventModal, setShowEventModal] = useState(false);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -55,7 +56,7 @@ export const ContextProvider = ({ children }) => {
 
     return (
         <StateContext.Provider
-            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer, currentColor, setCurrentColor, currentMode, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor, monthIndex, setMonthIndex, smallCalendarMonth, setSmallCalendarMonth, daySelected, setDaySelected}}>
+            value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, posts, setPosts, employee, setEmployee, customer, setCustomer, currentColor, setCurrentColor, currentMode, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor, monthIndex, setMonthIndex, smallCalendarMonth, setSmallCalendarMonth, daySelected, setDaySelected, showEventModal, setShowEventModal}}>
             {children}
         </StateContext.Provider>
     )
