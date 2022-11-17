@@ -72,7 +72,7 @@ const SmallCalendar = () => {
                             }}>
                             <span className="text-xs">{day.format("D")}</span>
                         </button>
-                    ))}
+                    ))} 
                 </React.Fragment>
             ))}
         </div>
