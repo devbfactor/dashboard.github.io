@@ -31,11 +31,11 @@ const SmallCalendar = () => {
         const currDay = day.format(format);
         const slcDay = daySelected && daySelected.format(format);
         if (nowDay === currDay) {
-            return currentColor
+            return "bg-red-500 rounded-full text-white"
         } else if (currDay === slcDay) {
-            return "bg-gray-200 rounded-full text-black font-bold dark:text-black"
+            return "bg-gray-100 rounded-full text-black dark:text-white dark:bg-gray-600"
         } else {
-            return "text-black";
+            return "";
         }
     }
 
@@ -56,16 +56,16 @@ const SmallCalendar = () => {
                 </div> 
             </header>
         </div>
-        <div className="grid grid-cols-7 grid-rows-6 dark:text-white">
+        <div className="grid grid-cols-7 grid-rows-6">
             {currentMonth[0].map((day, index) => (
-                <span key={index} className="md:text-sm text-xl py-1 text-center font-bold">
+                <span key={index} className="md:text-sm text-xl py-1 text-center dark:text-white font-bold">
                     {day.format('dd').charAt(0)}
                 </span>
             ))}
               {currentMonth.map((row, idx) => (
                 <React.Fragment key={idx}>
                     {row.map((day, idx) => (
-                        <button key={idx} className={`p-1 w-full text-base rounded-full dark:text-white hover:dark:text-black  text-white hover:bg-gray-200 ${getDayClass(day)}`} style={{backgroundColor: getDayClass(day)}}
+                        <button key={idx} className={`py-1 w-full dark:text-white ${getDayClass(day)}`}
                             onClick={() => {
                                 setSmallCalendarMonth(currentMonthIdx)
                                 setDaySelected(day)
