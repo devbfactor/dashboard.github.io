@@ -9,9 +9,9 @@ const Ecommerce = () => {
   const { currentColor } = useStateContext();
 
   return (
-    <div className="mt-12">
+    <div className="mt-12 dark:bg-main-dark-bg">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-72 p-8 pt-9 my-3 ml-5 welcom-bg bg-hero-pattern bg-cover bg-center">
+        <div className="mx-5 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 lg:ml-28 mr-5 p-8 pt-9 my-3 welcom-bg bg-hero-pattern bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
@@ -23,7 +23,7 @@ const Ecommerce = () => {
           </div>
         </div>
 
-        <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+        <div className="flex-1 grid-rows-4 md:flex-wrap md:flex m-3 justify-center gap-1 items-center">
           {earningData.map((item) => (
             <div key={item.title} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl m-1">
               <button type="button" style={{ color: item.iconColor, backgroundColor: item.iconBg }} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
@@ -39,18 +39,18 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
-          <div className="flex justify-between">
-            <p className="font-semibold text-xl">Revenue Updates</p>
-            <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+      <div className="flex flex-wrap justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-3 rounded-2xl w-360 md:w-780">
+          <div className="flex justify-between px-5 mt-5">
+            <p className="font-semibold text-sm md:text-xl">Revenue Updates</p>
+            <div className="flex items-center">
+              <p className="flex items-center gap-2 mr-5 text-gray-600 hover:drop-shadow-xl">
                 <span><GoPrimitiveDot /></span>
-                <span>Expense</span>
+                <span className="md:text-sm text-xs dark:text-white ml-2">Expense</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span><GoPrimitiveDot /></span>
-                <span>Budget</span>
+                <span className="md:text-sm text-xs ml-2">Budget</span>
               </p>
             </div>
           </div>
