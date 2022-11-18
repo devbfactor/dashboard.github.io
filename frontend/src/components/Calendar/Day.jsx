@@ -2,18 +2,20 @@ import dayjs from 'dayjs';
 import React from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const Day = ({day, rowIndex}) => {
+const Day = ({ day, rowIndex }) => {
+    const { setShowEventModal, setDaySelected, currentColor } = useStateContext();
+    
     const getCurrentDayClass = () => {
-        return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") ? 'text-center bg-blue-600 text-white rounded-full w-7' : '';
+        return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") ? currentColor : 'text-black';
     }
 
-    const { setShowEventModal, setDaySelected} = useStateContext();
+    
     
     return (
-        <div className="border border-gray-200 flex flex-col">
+        <div className="flex flex-col border-white border-1 dark:bg-main-dark-bg dark:border-gray-600 ">
             <header className="flex flex-col items-center">
-                {rowIndex === 0 && (<p className="text-sm mt-1"> {day.format("ddd").toUpperCase()} </p>)}
-                <p className={`text-sm p-1 my-1 text-center" ${getCurrentDayClass()}`}> 
+                {rowIndex === 0 && (<p className="text-sm mt-2 font-bold dark:text-white"> {day.format("ddd").toUpperCase()} </p>)}
+                <p className={`text-sm p-1 mt-3 text-center rounded-full px-1.5 text-white ${getCurrentDayClass()} dark:text-white`} style={{backgroundColor: getCurrentDayClass()}}>
                     {day.format("DD")} 
                 </p>
             </header>

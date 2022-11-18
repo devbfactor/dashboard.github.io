@@ -13,7 +13,7 @@ const EventModal = () => {
 
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
-        <form className="bg-white rounded-lg shadow-2xl w-1/4">
+        <form className="bg-white rounded-lg shadow-2xl w-500 px-2 mx-5">
             <header className="bg-gray-50 px-4 py-3 flex justify-between items-center">
                 <MdDragHandle className="text-gray-400"/>
                   <button onClick={() => setShowEventModal(false)}>

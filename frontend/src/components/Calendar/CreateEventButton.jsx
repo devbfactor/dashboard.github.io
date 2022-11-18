@@ -4,12 +4,12 @@ import { useStateContext } from '../../contexts/ContextProvider';
 
 
 const CreateEventButton = () => {
-  const { setShowEventModal } = useStateContext();
+  const { setShowEventModal, currentColor } = useStateContext();
   
   return (
-    <button onClick={()=> setShowEventModal(true)} className="border py-2 rounded-full flex items-center shadow-md hover:shadow-2xl">
-        <FiPlus className="ml-7 w-5 h-5" />
-        <span className="ml-2 pr-7">Create</span>  
+    <button onClick={()=> setShowEventModal(true)} className="bg-white py-2 rounded-full flex items-center hover:shadow-lg dark:hover:opacity-100" style={{backgroundColor: currentColor }}>
+        <FiPlus className="ml-7 w-5 h-5 text-white"/>
+        <span className="ml-2 pr-7 text-white">Create</span>  
     </button>
   )
 }
